@@ -1,6 +1,6 @@
 # Grafana_Webhook
 
-When working on alert rules in Grafana the convinien way to send alerts is vial mail. 
+When working on alert rules in Grafana the convenient way to send alerts is vial mail. 
 If you however have a local test environmend, this is often not that easy to implement.
 During the SUSE Hackweek in November 2023 a idea come up to send alerts via the webhook
 implemantation on Grafana Alertmanager. 
