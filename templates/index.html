@@ -1,0 +1,30 @@
+<!-- 
+    Index page to show incomming webhook alert from a prometheus alertmanager 
+-->
+
+{% extends 'base.html' %} 
+
+{% block title %}
+Main Page
+{% endblock %}
+
+<!-- Main container where all the messages are shown -->
+{% block content %}
+<div class="container">
+
+    {% for msg in messages|reverse %}
+    <div class="card border-secondary mb-1" style="max-width: 100%; ">
+        <div class="card-header" {%if msg.status == "firing"%} style="background-color: #ff0000" {%else%} style="background-color: #00ff00" {%endif%} >
+            {{msg.created_at}} | {{msg.status.upper()}}
+        </div>
+        <div class="card-body text-secondary">
+            <h5 class="card-title">{{msg.title}}</h5>
+            <p class="card-text">{{msg.start}} | {{msg.job.upper()}} reported that: <b>{{msg.description}}</b> on Host: {{msg.instance.upper()}} | {{msg.fingerprint}}</p>
+        </div>  
+    </div>
+    {% endfor %}
+
+</div>  
+{% endblock %}
+
+
