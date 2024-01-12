@@ -1,4 +1,4 @@
-# Grafana_Webhook
+# Grafana Webhook
 
 When working on alert rules in Grafana the convenient way to send alerts is vial mail. 
 If you however have a local test environmend, this is often not that easy to implement.
